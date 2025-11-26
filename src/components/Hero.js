@@ -1,4 +1,6 @@
 import React from 'react';
+import profileImage from '../assets/profile.jpg';
+import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 const Hero = () => {
     return (
@@ -22,52 +24,90 @@ const Hero = () => {
                 zIndex: -1,
             }} />
 
-            <div className="container animate-fade-in">
-                <span style={{
-                    color: 'var(--accent)',
-                    fontWeight: '600',
-                    letterSpacing: '2px',
-                    textTransform: 'uppercase',
-                    fontSize: '0.9rem',
-                    display: 'block',
-                    marginBottom: '1rem',
-                }}>
-                    Software Developer
-                </span>
-
-                <h1 style={{
-                    fontSize: 'clamp(3rem, 8vw, 5rem)',
-                    fontWeight: '700',
-                    marginBottom: '1.5rem',
-                    lineHeight: 1.1,
-                }}>
-                    Hello, I'm <br />
+            <div className="container animate-fade-in" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap-reverse', gap: '2rem' }}>
+                <div style={{ flex: '1', minWidth: '300px' }}>
                     <span style={{
-                        background: 'linear-gradient(to right, var(--primary), var(--accent))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
+                        color: 'var(--accent)',
+                        fontWeight: '600',
+                        letterSpacing: '2px',
+                        textTransform: 'uppercase',
+                        fontSize: '0.9rem',
+                        display: 'block',
+                        marginBottom: '1rem',
                     }}>
-                        Sid'Taher Omar
+                        Software Developer
                     </span>
-                </h1>
 
-                <p style={{
-                    fontSize: '1.2rem',
-                    color: 'var(--text-muted)',
-                    maxWidth: '600px',
-                    marginBottom: '2.5rem',
-                }}>
-                    I build accessible, pixel-perfect, and performant web experiences.
-                    Passionate about turning ideas into reality through code.
-                </p>
+                    <h1 style={{
+                        fontSize: 'clamp(3rem, 8vw, 5rem)',
+                        fontWeight: '700',
+                        marginBottom: '1.5rem',
+                        lineHeight: 1.1,
+                    }}>
+                        Hello, I'm <br />
+                        <span style={{
+                            background: 'linear-gradient(to right, var(--primary), var(--accent))',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                        }}>
+                            Sid'Taher Omar
+                        </span>
+                    </h1>
 
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                    <a href="#projects" className="btn btn-primary">View Projects</a>
-                    <a href="#contact" className="btn" style={{ border: '1px solid var(--secondary)', color: 'var(--text-main)' }}>Contact Me</a>
+                    <p style={{
+                        fontSize: '1.2rem',
+                        color: 'var(--text-muted)',
+                        maxWidth: '600px',
+                        marginBottom: '2.5rem',
+                    }}>
+                        I build accessible, pixel-perfect, and performant web experiences.
+                        Passionate about turning ideas into reality through code.
+                    </p>
+
+                    <div style={{ display: 'flex', gap: '1rem' }}>
+                        <a href="#projects" className="btn btn-primary">View Projects</a>
+                        <a href="#contact" className="btn" style={{ border: '1px solid var(--secondary)', color: 'var(--text-main)' }}>Contact Me</a>
+                    </div>
+                </div>
+
+                <div style={{ flex: '1', minWidth: '300px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
+                    <div style={{
+                        width: '350px',
+                        height: '350px',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        border: '4px solid rgba(59, 130, 246, 0.3)',
+                        boxShadow: '0 0 30px rgba(59, 130, 246, 0.2)',
+                        position: 'relative',
+                    }}>
+                        <img
+                            src={profileImage}
+                            alt="Sid'Taher Omar"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '1.5rem' }}>
+                        <a href="https://github.com/Sididaher" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.8rem', color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-main)'}>
+                            <FaGithub />
+                        </a>
+                        <a href="https://www.linkedin.com/feed/?trk=hb_signin" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.8rem', color: '#0077b5', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
+                            <FaLinkedin />
+                        </a>
+                        <a href="https://www.facebook.com/sidicheikh.omr" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.8rem', color: '#1877f2', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
+                            <FaFacebook />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     );
 };
+
 
 export default Hero;
