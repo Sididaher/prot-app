@@ -197,16 +197,56 @@ ul {
 }
 
 @media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
   .section-title {
     font-size: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .btn {
-    width: 100%;
-    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 
   .card {
     padding: 1.25rem;
+  }
+
+  /* Ensure text doesn't overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* iPhone specific optimizations */
+@media (max-width: 390px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }

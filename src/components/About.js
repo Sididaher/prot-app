@@ -9,27 +9,27 @@ const About = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '3rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+                    gap: 'clamp(1.5rem, 4vw, 3rem)',
                     alignItems: 'start'
                 }}>
                     {/* Main Text Content */}
                     <div className="card" style={{ height: '100%' }}>
-                        <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>
+                        <h3 style={{ fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', marginBottom: '1.5rem', color: 'var(--primary)' }}>
                             Who I Am
                         </h3>
-                        <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
+                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
                             I am a dedicated software development student at <strong>Supnum</strong>, driven by a passion for building functional and aesthetically pleasing web applications.
                         </p>
-                        <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                             My journey is defined by constant learning and applying new technologies to solve real-world problems. I aspire to become a professional software engineer who contributes to impactful projects.
                         </p>
                     </div>
 
                     {/* Highlights / Stats */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vw, 1.5rem)' }}>
 
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem' }}>
+                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
                             <div style={{
                                 background: 'rgba(59, 130, 246, 0.1)',
                                 padding: '1rem',
@@ -40,12 +40,12 @@ const About = () => {
                                 <FaGraduationCap />
                             </div>
                             <div>
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Education</h4>
+                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Education</h4>
                                 <p style={{ color: 'var(--text-muted)' }}>Student at Supnum</p>
                             </div>
                         </div>
 
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem' }}>
+                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
                             <div style={{
                                 background: 'rgba(6, 182, 212, 0.1)',
                                 padding: '1rem',
@@ -56,12 +56,12 @@ const About = () => {
                                 <FaCode />
                             </div>
                             <div>
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Focus</h4>
+                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Focus</h4>
                                 <p style={{ color: 'var(--text-muted)' }}>Web Development & Database</p>
                             </div>
                         </div>
 
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem' }}>
+                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
                             <div style={{
                                 background: 'rgba(245, 158, 11, 0.1)',
                                 padding: '1rem',
@@ -72,7 +72,7 @@ const About = () => {
                                 <FaLightbulb />
                             </div>
                             <div>
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Interests</h4>
+                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Interests</h4>
                                 <p style={{ color: 'var(--text-muted)' }}>Learning New Tech, Problem Solving</p>
                             </div>
                         </div>

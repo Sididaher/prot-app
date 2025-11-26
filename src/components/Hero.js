@@ -1,6 +1,6 @@
 import React from 'react';
 import profileImage from '../assets/profile.jpg';
-import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => {
     return (
@@ -92,7 +92,7 @@ const Hero = () => {
                         />
                     </div>
 
-                    <div style={{ display: 'flex', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                         <a href="https://github.com/Sididaher" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.8rem', color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-main)'}>
                             <FaGithub />
                         </a>
@@ -101,6 +101,9 @@ const Hero = () => {
                         </a>
                         <a href="https://www.facebook.com/sidicheikh.omr" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.8rem', color: '#1877f2', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
                             <FaFacebook />
+                        </a>
+                        <a href="mailto:omarsiditaher@gmail.com" style={{ fontSize: '1.8rem', color: '#EA4335', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
+                            <FaEnvelope />
                         </a>
                     </div>
                 </div>
