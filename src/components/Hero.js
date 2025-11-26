@@ -73,8 +73,8 @@ const Hero = () => {
 
                 <div style={{ flex: '1', minWidth: '300px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
                     <div style={{
-                        width: '350px',
-                        height: '350px',
+                        width: 'min(350px, 90vw)',
+                        height: 'min(350px, 90vw)',
                         borderRadius: '50%',
                         overflow: 'hidden',
                         border: '4px solid rgba(59, 130, 246, 0.3)',
