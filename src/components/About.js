@@ -44,13 +44,6 @@ const About = () => {
                         }}>
                             I am a passionate software development student at <strong style={{ color: 'var(--primary)' }}>SupNum</strong>, focused on building modern, functional, and visually polished digital products. I enjoy creating web applications that combine clean design, solid functionality, and real-world usefulness.
                         </p>
-                        <p style={{ 
-                            fontSize: '1.1rem', 
-                            color: 'var(--text-muted)', 
-                            lineHeight: '1.8' 
-                        }}>
-                            My journey is shaped by continuous learning, curiosity, and a strong commitment to improving my technical skills. I am motivated by the challenge of solving real problems with technology, and my goal is to grow into a professional software engineer who contributes to innovative and impactful projects.
-                        </p>
                     </div>
 
                     <div className="reveal" style={{ display: 'grid', gap: '1.5rem' }}>

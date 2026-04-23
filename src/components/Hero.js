@@ -134,8 +134,7 @@ const Hero = () => {
                                     style={{
                                         width: '100%',
                                         height: '100%',
-                                        objectFit: 'cover',
-                                        filter: 'grayscale(0.2) contrast(1.1)'
+                                        objectFit: 'cover'
                                     }}
                                 />
                                 <div style={{

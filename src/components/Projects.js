@@ -7,21 +7,21 @@ const Projects = () => {
             title: "Traiteurs",
             description: "A catering and food ordering application with multi-role workflows, real-time features, and modern mobile experience.",
             tech: ["Flutter", "Supabase", "Dart", "PostgreSQL"],
-            link: "#",
+            link: "https://apps.apple.com/fr/app/traiteurs/id6759182605",
             github: "https://github.com/Sididaher"
         },
         {
             title: "ExCoreX / Trading Platform",
             description: "A modern trading-style platform with admin and user flows, financial operations, dashboard experiences, and Supabase-backed architecture.",
             tech: ["React", "Supabase", "Node.js", "Chart.js"],
-            link: "#",
+            link: "https://oxcorex.com",
             github: "https://github.com/Sididaher"
         },
         {
             title: "Bac-English",
             description: "An English learning platform designed to help students improve their language skills through structured lessons and educational content.",
             tech: ["React Native", "Firebase", "Node.js"],
-            link: "#",
+            link: "https://bac-english-neon.vercel.app/",
             github: "https://github.com/Sididaher"
         },
         {
@@ -35,7 +35,7 @@ const Projects = () => {
             title: "WorkNow",
             description: "A modern job and opportunity platform designed to connect users with work opportunities through a clean, practical interface.",
             tech: ["React", "Next.js", "Tailwind CSS", "Prisma"],
-            link: "#",
+            link: "https://work-now-3a29.vercel.app/",
             github: "https://github.com/Sididaher/WorkNow"
         },
         {
