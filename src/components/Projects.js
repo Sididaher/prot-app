@@ -1,151 +1,135 @@
 import React from 'react';
-import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaRocket } from 'react-icons/fa';
 
 const Projects = () => {
     const projects = [
         {
-            title: 'Gestion d\'Achat',
-            description: 'A comprehensive web application designed to streamline product management, supplier relationships, and purchase tracking. Features include inventory management, supplier database, and purchase order processing.',
-            tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-            github: 'https://github.com/Sididaher/prot-app',
-            demo: '#',
-            featured: true
+            title: "Traiteurs",
+            description: "A catering and food ordering application with multi-role workflows, real-time features, and modern mobile experience.",
+            tech: ["Flutter", "Supabase", "Dart", "PostgreSQL"],
+            link: "#",
+            github: "https://github.com/Sididaher"
+        },
+        {
+            title: "ExCoreX / Trading Platform",
+            description: "A modern trading-style platform with admin and user flows, financial operations, dashboard experiences, and Supabase-backed architecture.",
+            tech: ["React", "Supabase", "Node.js", "Chart.js"],
+            link: "#",
+            github: "https://github.com/Sididaher"
+        },
+        {
+            title: "Bac-English",
+            description: "An English learning platform designed to help students improve their language skills through structured lessons and educational content.",
+            tech: ["React Native", "Firebase", "Node.js"],
+            link: "#",
+            github: "https://github.com/Sididaher"
+        },
+        {
+            title: "Achat App",
+            description: "A modern e-commerce application focused on delivering a clean, intuitive, and visually polished shopping experience.",
+            tech: ["Flutter", "React", "Node.js", "MySQL"],
+            link: "https://github.com/Sididaher/achats",
+            github: "https://github.com/Sididaher/app-mobile"
+        },
+        {
+            title: "WorkNow",
+            description: "A modern job and opportunity platform designed to connect users with work opportunities through a clean, practical interface.",
+            tech: ["React", "Next.js", "Tailwind CSS", "Prisma"],
+            link: "#",
+            github: "https://github.com/Sididaher/WorkNow"
+        },
+        {
+            title: "Voty",
+            description: "A modern voting and participation platform built to support organized decision-making and community interaction.",
+            tech: ["React", "TypeScript", "Node.js", "MongoDB"],
+            link: "#",
+            github: "https://github.com/zein114/voty"
+        },
+        {
+            title: "Village Résilient",
+            description: "A community-focused digital project designed to support local resilience and organization through a structured platform.",
+            tech: ["React", "Leaflet", "Node.js"],
+            link: "#",
+            github: "https://github.com/OumouMohamedBa/defi"
         }
     ];
 
     return (
-        <section id="projects" className="section" style={{ backgroundColor: 'rgba(30, 41, 59, 0.3)' }}>
+        <section id="projects" className="section">
             <div className="container">
-                <h2 className="section-title">Featured Projects</h2>
-
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                    gap: '2.5rem'
-                }}>
-                    {projects.map((project) => (
-                        <div
-                            key={project.title}
-                            className="card"
-                            style={{
-                                position: 'relative',
-                                overflow: 'hidden',
-                                padding: '0',
-                                height: '100%',
-                                display: 'flex',
-                                flexDirection: 'column'
-                            }}
-                        >
-                            {/* Project Header with Gradient */}
+                <h2 className="section-title reveal">Featured Projects</h2>
+                
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', 
+                    gap: '2.5rem' 
+                }} className="projects-grid">
+                    {projects.map((project, i) => (
+                        <div key={i} className="glass-card reveal" style={{ 
+                            padding: '0', 
+                            display: 'flex', 
+                            flexDirection: 'column',
+                            height: '100%'
+                        }}>
+                            {/* Card Visual Header */}
                             <div style={{
-                                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)',
-                                padding: '2rem',
-                                borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+                                height: '200px',
+                                background: `linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(129, 140, 248, 0.1) 100%)`,
+                                borderBottom: '1px solid var(--border-glass)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                position: 'relative',
+                                overflow: 'hidden'
                             }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                                    <div style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        borderRadius: '12px',
-                                        background: 'rgba(59, 130, 246, 0.2)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        fontSize: '1.5rem',
-                                        color: 'var(--primary)'
-                                    }}>
-                                        <FaCode />
-                                    </div>
-                                    <h3 style={{ fontSize: '1.8rem', margin: 0 }}>{project.title}</h3>
-                                </div>
-                                {project.featured && (
-                                    <span style={{
-                                        display: 'inline-block',
-                                        padding: '0.3rem 0.8rem',
-                                        background: 'rgba(59, 130, 246, 0.2)',
-                                        color: 'var(--primary)',
-                                        borderRadius: '20px',
-                                        fontSize: '0.75rem',
-                                        fontWeight: '600',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '1px'
-                                    }}>
-                                        Featured
-                                    </span>
-                                )}
+                                <FaRocket style={{ fontSize: '3rem', color: 'var(--primary)', opacity: '0.5' }} />
+                                <div style={{
+                                    position: 'absolute',
+                                    top: '1rem',
+                                    right: '1rem',
+                                    padding: '0.4rem 1rem',
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    borderRadius: '100px',
+                                    fontSize: '0.7rem',
+                                    fontWeight: '700',
+                                    color: 'var(--primary)',
+                                    textTransform: 'uppercase',
+                                    border: '1px solid var(--border-glass)'
+                                }}>Case Study</div>
                             </div>
 
-                            {/* Project Content */}
+                            {/* Card Content */}
                             <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                <p style={{
-                                    color: 'var(--text-muted)',
-                                    marginBottom: '2rem',
-                                    lineHeight: '1.7',
+                                <h3 style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '1rem' }}>{project.title}</h3>
+                                <p style={{ 
+                                    fontSize: '0.95rem', 
+                                    color: 'var(--text-muted)', 
+                                    lineHeight: '1.6',
+                                    marginBottom: '1.5rem',
                                     flex: 1
                                 }}>
                                     {project.description}
                                 </p>
-
-                                {/* Tech Stack */}
-                                <div style={{ marginBottom: '2rem' }}>
-                                    <h4 style={{
-                                        fontSize: '0.9rem',
-                                        color: 'var(--text-muted)',
-                                        marginBottom: '1rem',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '1px'
-                                    }}>
-                                        Technologies
-                                    </h4>
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
-                                        {project.tech.map((t) => (
-                                            <span key={t} style={{
-                                                fontSize: '0.85rem',
-                                                color: 'var(--primary)',
-                                                background: 'rgba(59, 130, 246, 0.1)',
-                                                border: '1px solid rgba(59, 130, 246, 0.3)',
-                                                padding: '0.4rem 0.9rem',
-                                                borderRadius: '6px',
-                                                fontWeight: '500'
-                                            }}>
-                                                {t}
-                                            </span>
-                                        ))}
-                                    </div>
+                                
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
+                                    {project.tech.map((t, j) => (
+                                        <span key={j} style={{
+                                            fontSize: '0.75rem',
+                                            padding: '0.2rem 0.8rem',
+                                            background: 'rgba(255, 255, 255, 0.03)',
+                                            color: 'var(--accent)',
+                                            borderRadius: '4px',
+                                            border: '1px solid var(--border-glass)'
+                                        }}>{t}</span>
+                                    ))}
                                 </div>
 
-                                {/* Action Buttons */}
                                 <div style={{ display: 'flex', gap: '1rem' }}>
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn btn-primary"
-                                        style={{
-                                            flex: 1,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem'
-                                        }}
-                                    >
-                                        <FaGithub /> GitHub
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-premium btn-secondary" style={{ flex: 1, justifyContent: 'center', fontSize: '0.9rem' }}>
+                                        <FaGithub /> Code
                                     </a>
-                                    <a
-                                        href={project.demo}
-                                        className="btn"
-                                        style={{
-                                            flex: 1,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem',
-                                            border: '1px solid var(--primary)',
-                                            color: 'var(--primary)',
-                                            background: 'transparent'
-                                        }}
-                                    >
-                                        <FaExternalLinkAlt /> Demo
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-premium btn-primary" style={{ flex: 1, justifyContent: 'center', fontSize: '0.9rem' }}>
+                                        <FaExternalLinkAlt /> Live
                                     </a>
                                 </div>
                             </div>
@@ -153,6 +137,14 @@ const Projects = () => {
                     ))}
                 </div>
             </div>
+
+            <style>{`
+                @media (max-width: 480px) {
+                    .projects-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 };

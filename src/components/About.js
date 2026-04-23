@@ -2,84 +2,97 @@ import React from 'react';
 import { FaGraduationCap, FaCode, FaLightbulb } from 'react-icons/fa';
 
 const About = () => {
+    const details = [
+        {
+            icon: <FaGraduationCap />,
+            title: "Education",
+            content: "Software Development Student at SupNum",
+            color: "var(--primary)"
+        },
+        {
+            icon: <FaCode />,
+            title: "Focus",
+            content: "Full-Stack Development, Web Technologies, and Databases",
+            color: "var(--secondary)"
+        },
+        {
+            icon: <FaLightbulb />,
+            title: "Interests",
+            content: "Learning New Technologies, UI/UX Improvement, and Practical Solutions",
+            color: "var(--accent)"
+        }
+    ];
+
     return (
         <section id="about" className="section">
             <div className="container">
-                <h2 className="section-title">About Me</h2>
-
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
-                    gap: 'clamp(1.5rem, 4vw, 3rem)',
-                    alignItems: 'start'
-                }}>
-                    {/* Main Text Content */}
-                    <div className="card" style={{ height: '100%' }}>
-                        <h3 style={{ fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', marginBottom: '1.5rem', color: 'var(--primary)' }}>
-                            Who I Am
-                        </h3>
-                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
-                            I am a dedicated software development student at <strong>Supnum</strong>, driven by a passion for building functional and aesthetically pleasing web applications.
+                <h2 className="section-title reveal">Who I Am</h2>
+                
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: '1fr 1fr', 
+                    gap: '4rem', 
+                    alignItems: 'center' 
+                }} className="about-grid">
+                    
+                    <div className="reveal">
+                        <p style={{ 
+                            fontSize: '1.2rem', 
+                            color: 'var(--text-main)', 
+                            lineHeight: '1.8', 
+                            marginBottom: '2rem' 
+                        }}>
+                            I am a passionate software development student at <strong style={{ color: 'var(--primary)' }}>SupNum</strong>, focused on building modern, functional, and visually polished digital products. I enjoy creating web applications that combine clean design, solid functionality, and real-world usefulness.
                         </p>
-                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                            My journey is defined by constant learning and applying new technologies to solve real-world problems. I aspire to become a professional software engineer who contributes to impactful projects.
+                        <p style={{ 
+                            fontSize: '1.1rem', 
+                            color: 'var(--text-muted)', 
+                            lineHeight: '1.8' 
+                        }}>
+                            My journey is shaped by continuous learning, curiosity, and a strong commitment to improving my technical skills. I am motivated by the challenge of solving real problems with technology, and my goal is to grow into a professional software engineer who contributes to innovative and impactful projects.
                         </p>
                     </div>
 
-                    {/* Highlights / Stats */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 3vw, 1.5rem)' }}>
-
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
-                            <div style={{
-                                background: 'rgba(59, 130, 246, 0.1)',
-                                padding: '1rem',
-                                borderRadius: '12px',
-                                color: 'var(--primary)',
-                                fontSize: '1.5rem'
+                    <div className="reveal" style={{ display: 'grid', gap: '1.5rem' }}>
+                        {details.map((item, i) => (
+                            <div key={i} className="glass-card" style={{ 
+                                display: 'flex', 
+                                gap: '1.5rem', 
+                                alignItems: 'center',
+                                padding: '1.5rem'
                             }}>
-                                <FaGraduationCap />
+                                <div style={{ 
+                                    width: '60px', 
+                                    height: '60px', 
+                                    borderRadius: '1rem', 
+                                    background: `rgba(${item.color === 'var(--primary)' ? '56, 189, 248' : item.color === 'var(--secondary)' ? '129, 140, 248' : '34, 211, 238'}, 0.1)`,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '1.5rem',
+                                    color: item.color,
+                                    flexShrink: 0
+                                }}>
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem', color: '#fff' }}>{item.title}</h3>
+                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{item.content}</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Education</h4>
-                                <p style={{ color: 'var(--text-muted)' }}>Student at Supnum</p>
-                            </div>
-                        </div>
-
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
-                            <div style={{
-                                background: 'rgba(6, 182, 212, 0.1)',
-                                padding: '1rem',
-                                borderRadius: '12px',
-                                color: 'var(--accent)',
-                                fontSize: '1.5rem'
-                            }}>
-                                <FaCode />
-                            </div>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Focus</h4>
-                                <p style={{ color: 'var(--text-muted)' }}>Web Development & Database</p>
-                            </div>
-                        </div>
-
-                        <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 3vw, 1.5rem)' }}>
-                            <div style={{
-                                background: 'rgba(245, 158, 11, 0.1)',
-                                padding: '1rem',
-                                borderRadius: '12px',
-                                color: '#f59e0b',
-                                fontSize: '1.5rem'
-                            }}>
-                                <FaLightbulb />
-                            </div>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', marginBottom: '0.2rem' }}>Interests</h4>
-                                <p style={{ color: 'var(--text-muted)' }}>Learning New Tech, Problem Solving</p>
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                @media (max-width: 992px) {
+                    .about-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 3rem !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 };

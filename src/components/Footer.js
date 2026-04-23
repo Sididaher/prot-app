@@ -1,35 +1,62 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer id="footer" style={{ padding: '4rem 0', backgroundColor: 'var(--bg-card)', textAlign: 'center' }}>
-            <div className="container">
-                <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Let's Work Together</h2>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-                    Feel free to reach out for collaborations or just a friendly hello.
-                </p>
-
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem' }}>
-                    <a href="https://github.com/Sididaher" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.5rem', color: 'var(--text-main)' }}>
-                        <FaGithub />
+        <footer style={{ 
+            padding: '4rem 0', 
+            borderTop: '1px solid var(--border-glass)',
+            background: 'var(--bg-dark)'
+        }}>
+            <div className="container" style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '2rem'
+            }}>
+                <div>
+                    <a href="#hero" style={{ 
+                        fontSize: '1.2rem', 
+                        fontWeight: '800', 
+                        color: '#fff', 
+                        letterSpacing: '-1px'
+                    }}>
+                        Sid'Taher<span style={{ color: 'var(--primary)' }}>.</span>
                     </a>
-                    <a href="https://www.linkedin.com/feed/?trk=hb_signin" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.5rem', color: '#0077b5' }}>
-                        <FaLinkedin />
-                    </a>
-                    <a href="https://www.facebook.com/sidicheikh.omr" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.5rem', color: '#1877f2' }}>
-                        <FaFacebook />
-                    </a>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+                        Designing and developing premium digital experiences.
+                    </p>
                 </div>
 
-                <a href="mailto:contact@example.com" className="btn btn-primary">
-                    Get In Touch
-                </a>
+                <div style={{ display: 'flex', gap: '2rem' }}>
+                    {['About', 'Skills', 'Projects', 'Contact'].map(link => (
+                        <a key={link} href={`#${link.toLowerCase()}`} style={{ 
+                            fontSize: '0.85rem', 
+                            color: 'var(--text-muted)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '1px'
+                        }} className="footer-link">
+                            {link}
+                        </a>
+                    ))}
+                </div>
 
-                <div style={{ marginTop: '4rem', color: 'var(--secondary)', fontSize: '0.9rem' }}>
-                    &copy; {new Date().getFullYear()} Sid'Taher Omar. All rights reserved.
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                    &copy; {new Date().getFullYear()} Sid'Taher Omar.
                 </div>
             </div>
+
+            <style>{`
+                .footer-link:hover {
+                    color: var(--primary) !important;
+                }
+                @media (max-width: 768px) {
+                    footer .container {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                }
+            `}</style>
         </footer>
     );
 };

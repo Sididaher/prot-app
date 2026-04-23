@@ -20,143 +20,131 @@ const Header = () => {
         { name: 'Contact', href: '#contact' },
     ];
 
-    const handleLinkClick = () => {
-        setMobileMenuOpen(false);
-    };
-
     return (
         <header style={{
             position: 'fixed',
-            top: 0,
+            top: '0',
             left: 0,
             right: 0,
             zIndex: 1000,
-            padding: '1rem 0',
-            transition: 'all 0.3s ease',
-            backgroundColor: scrolled ? 'rgba(15, 23, 42, 0.95)' : 'transparent',
-            backdropFilter: scrolled ? 'blur(10px)' : 'none',
-            boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.1)' : 'none',
+            padding: scrolled ? '1rem 0' : '1.5rem 0',
+            transition: 'var(--transition-fast)',
+            background: scrolled ? 'rgba(2, 6, 23, 0.8)' : 'transparent',
+            backdropFilter: scrolled ? 'blur(16px)' : 'none',
+            borderBottom: scrolled ? '1px solid var(--border-glass)' : '1px solid transparent'
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <a href="/" style={{ fontSize: '1.5rem', fontWeight: '700', fontFamily: 'var(--font-heading)', zIndex: 1001 }}>
-                    Sid<span style={{ color: 'var(--primary)' }}>'</span>Taher
+                <a href="#hero" style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '800', 
+                    color: '#fff', 
+                    letterSpacing: '-1px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '2px'
+                }}>
+                    Sid'Taher<span style={{ color: 'var(--primary)', fontSize: '2rem', lineHeight: '0' }}>.</span>
                 </a>
 
-                {/* Desktop Navigation */}
-                <nav style={{ display: 'none' }} className="desktop-nav">
-                    <ul style={{ display: 'flex', gap: '2rem' }}>
+                {/* Desktop Nav */}
+                <nav className="desktop-nav">
+                    <ul style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
                         {navLinks.map((link) => (
                             <li key={link.name}>
-                                <a
-                                    href={link.href}
-                                    style={{
-                                        fontWeight: '500',
-                                        fontSize: '0.95rem',
-                                        opacity: 0.9,
-                                    }}
-                                    onMouseOver={(e) => e.target.style.color = 'var(--primary)'}
-                                    onMouseOut={(e) => e.target.style.color = 'inherit'}
-                                >
+                                <a href={link.href} style={{ 
+                                    fontSize: '0.9rem', 
+                                    fontWeight: '500', 
+                                    color: 'var(--text-muted)',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '1px'
+                                }} className="nav-link">
                                     {link.name}
                                 </a>
                             </li>
                         ))}
+                        <li>
+                            <a href="#contact" className="btn-premium btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem' }}>
+                                Hire Me
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
-                {/* Mobile Menu Button */}
-                <button
+                {/* Mobile Menu Btn */}
+                <button 
+                    className="mobile-btn" 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    style={{
-                        display: 'none',
-                        background: 'none',
-                        border: 'none',
-                        color: 'var(--text-main)',
-                        fontSize: '1.5rem',
-                        cursor: 'pointer',
-                        zIndex: 1001
+                    style={{ 
+                        background: 'none', 
+                        border: 'none', 
+                        color: '#fff', 
+                        fontSize: '1.5rem', 
+                        cursor: 'pointer' 
                     }}
-                    className="mobile-menu-btn"
                 >
                     {mobileMenuOpen ? <FaTimes /> : <FaBars />}
                 </button>
+            </div>
 
-                {/* Mobile Navigation */}
-                <nav
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        right: mobileMenuOpen ? 0 : '-100%',
-                        width: '70%',
-                        maxWidth: '300px',
-                        height: '100vh',
-                        backgroundColor: 'rgba(15, 23, 42, 0.98)',
-                        backdropFilter: 'blur(10px)',
-                        padding: '5rem 2rem',
-                        transition: 'right 0.3s ease',
-                        zIndex: 1000
-                    }}
-                    className="mobile-nav"
-                >
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                        {navLinks.map((link) => (
-                            <li key={link.name}>
-                                <a
-                                    href={link.href}
-                                    onClick={handleLinkClick}
-                                    style={{
-                                        fontWeight: '500',
-                                        fontSize: '1.1rem',
-                                        display: 'block',
-                                        padding: '0.5rem 0',
-                                    }}
-                                    onMouseOver={(e) => e.target.style.color = 'var(--primary)'}
-                                    onMouseOut={(e) => e.target.style.color = 'inherit'}
-                                >
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-
-                {/* Overlay */}
-                {mobileMenuOpen && (
-                    <div
+            {/* Mobile Nav Overlay */}
+            <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100vh',
+                background: 'var(--bg-dark)',
+                zIndex: 999,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '2rem',
+                transition: '0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)',
+                opacity: mobileMenuOpen ? 1 : 0
+            }}>
+                {navLinks.map((link) => (
+                    <a 
+                        key={link.name} 
+                        href={link.href} 
                         onClick={() => setMobileMenuOpen(false)}
-                        style={{
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            zIndex: 999
-                        }}
-                    />
-                )}
+                        style={{ fontSize: '2rem', fontWeight: '700', color: '#fff' }}
+                    >
+                        {link.name}
+                    </a>
+                ))}
+                <a 
+                    href="#contact" 
+                    className="btn-premium btn-primary" 
+                    onClick={() => setMobileMenuOpen(false)}
+                >
+                    Hire Me
+                </a>
             </div>
 
             <style>{`
-        @media (min-width: 769px) {
-          .desktop-nav {
-            display: block !important;
-          }
-          .mobile-menu-btn {
-            display: none !important;
-          }
-          .mobile-nav {
-            display: none !important;
-          }
-        }
-        @media (max-width: 768px) {
-          .mobile-menu-btn {
-            display: block !important;
-          }
-        }
-      `}</style>
+                .nav-link:hover {
+                    color: #fff !important;
+                }
+                .desktop-nav {
+                    display: block;
+                }
+                .mobile-btn {
+                    display: none;
+                }
+                @media (max-width: 768px) {
+                    .desktop-nav {
+                        display: none;
+                    }
+                    .mobile-btn {
+                        display: block;
+                    }
+                }
+            `}</style>
         </header>
     );
 };
 
 export default Header;
+
