@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
     FaReact, FaNodeJs, FaPhp, FaPython, FaGitAlt, 
-    FaLinux, FaDocker, FaDatabase 
+    FaLinux, FaDocker
 } from 'react-icons/fa';
 import { 
     SiNextdotjs, SiTypescript, SiTailwindcss, 
